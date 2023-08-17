@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Inventory Board</title>
+</head>
+
+<body>
+
+    <main>
+
+        <header>
+
+            <nav id="desktop_nav">
+                <div id="left_section">
+                    <div class="svg_image">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                    </div>
+
+                    <div class="nav_text">
+                        <p> > </p>
+                        <p>Dashboard</p>
+                        <p> > </p>
+                        <p class="blue">Orders</p>
+                    </div>
+                </div>
+
+                <div id="right_section">
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    </button>
+                </div>
+            </nav>
+
+        </header>
+
+        <section id="search_filter_path">
+            <div id="top_path">
+                <p>Orders</p>
+
+                <div id="download_button">
+                    <button class="first">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download-cloud"><polyline points="8 17 12 21 16 17"></polyline><line x1="12" y1="12" x2="12" y2="21"></line><path d="M20.88 18.09A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.29"></path></svg>
+                        </div>
+                        <p>Download PDF</p>
+                    </button>
+
+                    <button class="second">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-table"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"></path></svg>
+                        </div>
+                        <p>Download CSV</p>
+                    </button>
+                </div>
+            </div>
+
+            <div id="bottom_path">
+                
+                <div id="mobile_search">
+                    <div id="search_mobile">
+                        <button class="search_mobile_icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        </button>
+                        <input type="search" placeholder="Search">
+                    </div>
+
+                    <button class="filter_button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-filter"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+                    </button>
+                </div>
+                
+                <div id="desktop_search_filter">
+
+                    <div id="search_desktop">
+                        <p>Search for order</p>
+
+                        <div id="search_bar_desktop">
+                            <button class="search_desktop_icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                            </button>
+                            <input type="search" placeholder="Search">
+                        </div>
+                    </div>
+
+                    <div class="filter status_filter">
+                        <label for="status">Status</label>
+
+                        <select name="status" id="status">
+                            <option value="paid">Paid</option>
+                            <option value="pending">Pending</option>
+                            <option value="refunded">Refunded</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                    </div>
+
+                    <div class="filter category_filter">
+                        <label for="category">Category</label>
+
+                        <select name="category" id="category">
+                            <option value="kitchen">Kitchen</option>
+                            <option value="garden">Garden</option>
+                            <option value="indoor">Indoor</option>
+                        </select>
+                    </div>
+
+                    <div class="filter customer_filter">
+                        <label for="customer">Customer</label>
+
+                        <select name="customer" id="customer">
+                            <option value="new">New</option>
+                            <option value="old">Old</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="table_data">
+
+            <table>
+
+                <!-- table column width -->
+                <!-- <colgroup>
+                    <col style="width: 5%;" class="column_one">
+                    <col style="width: 10%;" class="column_two">
+                    <col class="column_three">
+                    <col class="column_four">
+                    <col class="column_five">
+                    <col class="column_six">
+                    <col class="column_seven">
+                </colgroup> -->
+
+
+                <!-- collection of table heading -->
+                <thead>
+                    <tr>
+                        <th class="checkbox_column info-head">
+                            <input type="checkbox" name="header_checkbox" id="header_checkbox">
+                        </th>
+                        <th class="invoice_column info-head">
+                            <div class="invoice_heading_content">
+                                <p>Invoice</p> 
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+                                </span>                               
+                            </div>
+                        </th>
+                        <th class="date_column info-head">Date</th>
+                        <th class="status_column info-head">Status</th>
+                        <th class="customer_column info-head">Customer</th>
+                        <th class="subscription_column info-head">Subscription</th>
+                        <th class="empty_column info-head">Action(empty)</th>
+                    </tr>
+                </thead>
+                
+
+                <!-- collection of table data -->
+                <tbody>
+                    <!-- paid 1 new row -->
+                    <tr>
+                        <td class="checkbox_column">
+                            <input type="checkbox" name="header_checkbox" id="header_checkbox">
+                        </td>
+                        <td class="invoice_column">INV-1234</td>
+                        <td class="date_column">Feb 3, 2023</td>
+                        <td class="status_column">
+                            <div class="status_column_content paid_text">
+                                <span class="paid_tick">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                </span>
+                                <p>Paid</p>
+                            </div>
+                        </td>
+                        <td class="customer_column">
+                            <div class="customer_id">
+                                <img class="customer_image" src="woman.jpg" alt="Woman">
+                                <div class="customer_name_email">
+                                    <p>Steve Hampton</p>
+                                    <p>steve.hamp@email.com</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="subscription_column">Yearly</td>
+                        <td class="empty_column">
+                            <a href="#">Archive</a>
+                            <a href="#">Download</a>
+                        </td>
+                    </tr>
+
+                    <!-- refund 2 new row -->
+                    <tr>
+                        <td class="checkbox_column">
+                            <input type="checkbox" name="header_checkbox" id="header_checkbox">
+                        </td>
+                        <td class="invoice_column">INV-1234</td>
+                        <td class="date_column">Feb 3, 2023</td>
+                        <td class="status_column">
+                            <div class="status_column_content refunded_text">
+                                <span class="refunded_mark">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-corner-up-left"><polyline points="9 14 4 9 9 4"></polyline><path d="M20 20v-7a4 4 0 0 0-4-4H4"></path></svg>
+                                </span>
+                                <p>Refunded</p>
+                            </div>
+                        </td>
+                        <td class="customer_column">
+                            <div class="customer_id">
+                                <span class="customer_avatar">O</span>
+                                <div class="customer_name_email">
+                                    <p>Olivia Ryhe</p>
+                                    <p>olivia@email.com</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="subscription_column">Monthly</td>
+                        <td class="empty_column">
+                            <a href="#">Archive</a>
+                            <a href="#">Download</a>
+                        </td>
+                    </tr>
+
+                    <!-- 3 cancelled new row -->
+                    <tr>
+                        <td class="checkbox_column">
+                            <input type="checkbox" name="header_checkbox" id="header_checkbox">
+                        </td>
+                        <td class="invoice_column">INV-1234</td>
+                        <td class="date_column">Feb 3, 2023</td>
+                        <td class="status_column">
+                            <div class="status_column_content cancelled_text">
+                                <span class="cancelled_mark">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                </span>
+                                <p>Cancelled</p>
+                            </div>
+                        </td>
+                        <td class="customer_column">
+                            <div class="customer_id">
+                                <div class="customer_initials">C</div>
+                                <div class="customer_name_email">
+                                    <p>Ciaran Murray</p>
+                                    <p>ciaran.murray@email.com</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="subscription_column">Yearly</td>
+                        <td class="empty_column">
+                            <a href="#">Archive</a>
+                            <a href="#">Download</a>
+                        </td>
+                    </tr>
+
+                    <!--paid 4 new row -->
+                    <tr>
+                        <td class="checkbox_column">
+                            <input type="checkbox" name="header_checkbox" id="header_checkbox">
+                        </td>
+                        <td class="invoice_column">INV-1234</td>
+                        <td class="date_column">Feb 3, 2023</td>
+                        <td class="status_column">
+                            <div class="status_column_content paid_text">
+                                <span class="paid_tick">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                </span>
+                                <p>Paid</p>
+                            </div>
+                        </td>
+                        <td class="customer_column">
+                            <div class="customer_id">
+                                <img class="customer_image" src="woman.jpg" alt="Woman">
+                                <div class="customer_name_email">
+                                    <p>Steve Hampton</p>
+                                    <p>steve.hamp@email.com</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="subscription_column">Yearly</td>
+                        <td class="empty_column">
+                            <a href="#">Archive</a>
+                            <a href="#">Download</a>
+                        </td>
+                    </tr>
+
+                    <!-- refund 5 new row -->
+                    <tr>
+                        <td class="checkbox_column">
+                            <input type="checkbox" name="header_checkbox" id="header_checkbox">
+                        </td>
+                        <td class="invoice_column">INV-1234</td>
+                        <td class="date_column">Feb 3, 2023</td>
+                        <td class="status_column">
+                            <div class="status_column_content refunded_text">
+                                <span class="refunded_mark">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-corner-up-left"><polyline points="9 14 4 9 9 4"></polyline><path d="M20 20v-7a4 4 0 0 0-4-4H4"></path></svg>
+                                </span>
+                                <p>Refunded</p>
+                            </div>
+                        </td>
+                        <td class="customer_column">
+                            <div class="customer_id">
+                                <span class="customer_avatar">O</span>
+
+                                <div class="customer_name_email">
+                                    <p>Olivia Ryhe</p>
+                                    <p>olivia@email.com</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="subscription_column">Monthly</td>
+                        <td class="empty_column">
+                            <a href="#">Archive</a>
+                            <a href="#">Download</a>
+                        </td>
+                    </tr>
+
+                    <!-- 6 cancelled new row -->
+                    <tr>
+                        <td class="checkbox_column">
+                            <input type="checkbox" name="header_checkbox" id="header_checkbox">
+                        </td>
+                        <td class="invoice_column">INV-1234</td>
+                        <td class="date_column">Feb 3, 2023</td>
+                        <td class="status_column">
+                            <div class="status_column_content cancelled_text">
+                                <span class="cancelled_mark">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                </span>
+                                <p>Cancelled</p>
+                            </div>
+                        </td>
+                        <td class="customer_column">
+                            <div class="customer_id">
+                                <div class="customer_initials">C</div>
+                                <div class="customer_name_email">
+                                    <p>Ciaran Murray</p>
+                                    <p>ciaran.murray@email.com</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="subscription_column">Yearly</td>
+                        <td class="empty_column">
+                            <a href="#">Archive</a>
+                            <a href="#">Download</a>
+                        </td>
+                    </tr>
+
+                    <!-- paid 7 new row -->
+                    <tr>
+                        <td class="checkbox_column">
+                            <input type="checkbox" name="header_checkbox" id="header_checkbox">
+                        </td>
+                        <td class="invoice_column">INV-1234</td>
+                        <td class="date_column">Feb 3, 2023</td>
+                        <td class="status_column">
+                            <div class="status_column_content paid_text">
+                                <span class="paid_tick">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                </span>
+                                <p>Paid</p>
+                            </div>
+                        </td>
+                        <td class="customer_column">
+                            <div class="customer_id">
+                                <img class="customer_image" src="woman.jpg" alt="Woman">
+                                <div class="customer_name_email">
+                                    <p>Steve Hampton</p>
+                                    <p>steve.hamp@email.com</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="subscription_column">Yearly</td>
+                        <td class="empty_column">
+                            <a href="#">Archive</a>
+                            <a href="#">Download</a>
+                        </td>
+                    </tr>
+
+                    <!-- refund 8 new row -->
+                    <tr>
+                        <td class="checkbox_column">
+                            <input type="checkbox" name="header_checkbox" id="header_checkbox">
+                        </td>
+                        <td class="invoice_column">INV-1234</td>
+                        <td class="date_column">Feb 3, 2023</td>
+                        <td class="status_column">
+                            <div class="status_column_content refunded_text">
+                                <span class="refunded_mark">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-corner-up-left"><polyline points="9 14 4 9 9 4"></polyline><path d="M20 20v-7a4 4 0 0 0-4-4H4"></path></svg>
+                                </span>
+                                <p>Refunded</p>
+                            </div>
+                        </td>
+                        <td class="customer_column">
+                            <div class="customer_id">
+                                <span class="customer_avatar">O</span>
+
+                                <div class="customer_name_email">
+                                    <p>Olivia Ryhe</p>
+                                    <p>olivia@email.com</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="subscription_column">Monthly</td>
+                        <td class="empty_column">
+                            <a href="#">Archive</a>
+                            <a href="#">Download</a>
+                        </td>
+                    </tr>
+
+                    <!-- 9 cancelled new row -->
+                    <tr>
+                        <td class="checkbox_column">
+                            <input type="checkbox" name="header_checkbox" id="header_checkbox">
+                        </td>
+                        <td class="invoice_column">INV-1234</td>
+                        <td class="date_column">Feb 3, 2023</td>
+                        <td class="status_column">
+                            <div class="status_column_content cancelled_text">
+                                <span class="cancelled_mark">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                </span>
+                                <p>Cancelled</p>
+                            </div>
+                        </td>
+                        <td class="customer_column">
+                            <div class="customer_id">
+                                <div class="customer_initials">C</div>
+                                <div class="customer_name_email">
+                                    <p>Ciaran Murray</p>
+                                    <p>ciaran.murray@email.com</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="subscription_column">Yearly</td>
+                        <td class="empty_column">
+                            <a href="#">Archive</a>
+                            <a href="#">Download</a>
+                        </td>
+                    </tr>
+
+                    <!-- paid 10 new row -->
+                    <tr>
+                        <td class="checkbox_column">
+                            <input type="checkbox" name="header_checkbox" id="header_checkbox">
+                        </td>
+                        <td class="invoice_column">INV-1234</td>
+                        <td class="date_column">Feb 3, 2023</td>
+                        <td class="status_column">
+                            <div class="status_column_content paid_text">
+                                <span class="paid_tick">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                </span>
+                                <p>Paid</p>
+                            </div>
+                        </td>
+                        <td class="customer_column">
+                            <div class="customer_id">
+                                <img class="customer_image" src="woman.jpg" alt="Woman">
+                                <div class="customer_name_email">
+                                    <p>Steve Hampton</p>
+                                    <p>steve.hamp@email.com</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="subscription_column">Yearly</td>
+                        <td class="empty_column">
+                            <a href="#">Archive</a>
+                            <a href="#">Download</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+
+        <footer>
+            <div class="mobile_footer">
+                <button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                </button>
+                
+
+                <p>Page 1 of 10</p>
+
+                <button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+            </div>
+
+            <div class="desktop_footer">
+                <div class="svg_markers">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+
+                    <p>Previous</p>
+                </div>
+
+                <div class="footer_number">
+                    <p>1</p>
+                    <p>2</p>
+                    <p>3</p>
+                    <p> ... </p>
+                    <p>8</p>
+                    <p>9</p>
+                    <p>10</p>
+                </div>
+
+                <div class="svg_markers">
+                    <p>Next</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    
+
+</body>
+
+</html>
+
+
+<!-- https://mui.com/joy-ui/getting-started/templates/order-dashboard/ -->
+<!-- https://html5-tutorial.net/tables/changing-column-width/ -->
+<!-- https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child -->
